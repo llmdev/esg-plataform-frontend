@@ -439,8 +439,10 @@
 }
 
 .dashboard {
+    display: flex;
+    flex-direction: column;
     justify-content: space-around;
-    width: 100%;
+    /* width: 100%; */
 }
 
 .dashboard__textos {
@@ -609,7 +611,7 @@
 
 .evento__cards__item {
     background-color: #BEF3C0;
-    width: 620px;
+    width: 50%;
     height: 120px;
     display: flex;
     justify-content: space-around;
