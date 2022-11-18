@@ -9,6 +9,8 @@ import Footer from './components/Footer.vue'
 
 <template>
   <Header />
+  <RouterView />
+
   <Hero />
   <Main msg="12" />
   <Footer msg="Footer" />

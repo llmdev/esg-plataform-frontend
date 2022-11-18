@@ -6,6 +6,8 @@ export default {
 }
 
 const count = ref(0)
+
+
 </script>
 
 <template>
@@ -13,21 +15,25 @@ const count = ref(0)
   <section class="header">
     <header>
         <div class="logo">
-            <a href="./index.html">
+            <a href="/Main">
                 <img src="../assets/logo.svg  " alt="Colheita do Bem">
             </a>
         </div>
         <nav class="header__menu__wrapper">
             <ul class="header__menu">
                 <li class="header__menu__item">
-                    <a href="#">
+                    <router-link to="/"> Página Inicial</router-link>
+
+                    <!-- <a href="/about">
                         Página Inicial
-                    </a>
+                    </a> -->
                 </li>
                 <li class="header__menu__item">
-                    <a href="">
+                    <router-link to="/about"> Notícias</router-link>
+
+                    <!-- <a href="">
                         Notícias
-                    </a>
+                    </a> -->
                 </li>
                 <li class="header__menu__item">
                     <a href="">

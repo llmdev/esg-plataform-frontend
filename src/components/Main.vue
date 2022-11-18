@@ -11,15 +11,19 @@
   
   <template>
     <!-- <h1>{{ msg }}</h1> -->
+    <RouterView />
+
     <section class="sobre-nos__wrapper">
       <div class="sobre-nos">
           <div class="respiro">
               <hr width="72px">
           </div>
           <div class="sobre-nos__textos">
-              <a href="./pages/about.html">
+            <router-link to="/">Sobre Nooos</router-link> |
+
+              <!-- <a href="./pages/about.html">
                   <h3>SOBRE NÓS</h3>
-              </a>
+              </a> -->
               <h1>Ajudamos a natureza sorrir e sobreviver em todo lugar</h1>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
                   tristique.</p>
