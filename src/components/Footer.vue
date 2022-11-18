@@ -51,64 +51,8 @@ ul{
     padding: 0;
 }
 li{list-style: none;}
-  @media (max-width: 1199px) {
-    .footer {
-        margin: 1em 0 0;
-        flex-direction: row;
-    }
 
-    .dashboard__wrapper {
-        padding: 4em 2em;
-    }
-
-  }
-  @media (max-width: 767px) {
-    .footer {
-        padding: 1em 0;
-        flex-direction: column;
-        gap: 1em;
-    }
-
-    .newsletter {
-        width: 100%;
-    }
-
-    .newsletter h2 {
-        font-size: 30px;
-    }
-
-}
-  @media (max-width: 576px) {
-  .mapa {
-        gap: 15%;
-    }
-
-    .mapa ul li {
-        font-size: 12px
-    }
-
-    .newsletter h2 {
-        width: fit-content;
-        font-size: 24px;
-    }
-
-    .newsletter .input {
-        height: 45px;
-        margin: 1em 0;
-    }
-
-    .input input {
-        padding: 0 1em;
-        font-size: 14px;
-        width: 120px;
-    }
-
-    .input button {
-        width: 120px;
-    }
-  }
- 
-  /* FOOTER */
+  /* COMPONENTE FOOTER */
 .footer {
     background: #000;
     color: white;
@@ -166,4 +110,78 @@ li{list-style: none;}
     font-size: 16px;
     font-weight: 700;
 }
+@media (max-width: 1199px) {
+    .footer {
+        margin: 1em 0 0;
+        flex-direction: row;
+    }
+
+    .dashboard__wrapper {
+        padding: 4em 2em;
+    }
+
+  }
+  @media (max-width: 767px) {
+    .footer {
+        padding: 1em 0;
+        flex-direction: column;
+        gap: 1em;
+        align-items: center;
+    }
+
+    .newsletter {
+        width: 100%;
+    }
+
+    .newsletter h2 {
+        font-size: 30px;
+        margin: 0 auto;
+    }
+    .input{
+        justify-content: center;
+    }
+    .logo{
+        margin: 2em;
+    }
+
+}
+  @media (max-width: 576px) {
+    .footer{
+        align-items: flex-start;
+    }
+    .logo, .mapa {
+        padding: 1em;
+        margin: 0;
+    }
+    .mapa {
+        gap: 15%;
+        width: fit-content;
+    }
+
+    .mapa ul li {
+        font-size: 12px
+    }
+
+    .newsletter h2 {
+        width: fit-content;
+        font-size: 24px;
+    }
+
+    .newsletter .input {
+        height: 45px;
+        margin: 1em 0;
+    }
+
+    .input input {
+        padding: 0 1em;
+        font-size: 14px;
+        width: 120px;
+    }
+
+    .input button {
+        width: fit-content
+    }
+  }
+ 
+
 </style>

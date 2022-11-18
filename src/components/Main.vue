@@ -1046,8 +1046,9 @@
         font-size: 12px;
     }
 
-    .dashboard__imagem {
+    .dashboard__imagem img {
         width: 70%;
+        margin: 0 auto;
     }
 
     .planos__wrapper {
