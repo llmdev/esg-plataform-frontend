@@ -4,6 +4,7 @@ import About from '../components/About.vue'
 import Login from '../components/Login.vue'
 import Cadastro from '../components/Cadastro.vue'
 import Logged from '../components/Logged.vue'
+import Posts from '../components/Posts.vue'
 
 
 
@@ -32,6 +33,11 @@ const routes = [
         path: '/logged',
         name: 'logged',
         component: Logged,
+    },
+    {
+        path: '/posts',
+        name: 'posts',
+        component: Posts,
     },
 ]
 const router = createRouter({

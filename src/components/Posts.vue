@@ -6,32 +6,36 @@ export default {
     data() {
         return {
             list: [],
-            fetching: false
+            fetching: true
         }
     },
-    computed: {
+    methods: {
       fetchData() {
-        const catFactsResponse = axios.get('https://api.hubapi.com/content/api/v2/blog-posts?hapikey=demo')
-        .then(response => {
-          console.log('response', response.data)
-          this.list.push(response.data);
-        })
-      }
+        axios.get('https://api.hubapi.com/content/api/v2/blog-posts?hapikey=demo')
+          .then(response => {
+            this.list = response.data;
+            this.fetching = false
+          })
+        }
     },
     mounted() {
-      this.fetchData;
-      console.log(this.list)
+      this.fetchData();
     }
 }
-
-
-
-
-
-
 </script>
 <template>
-{{catFacts}}
+  <h1>
+    TODOS OS POSTS
+  </h1>
+  <span v-if="fetching">Carregando...</span>
+
+  <ul class="list">
+    <li v-for="(item, index) in list.objects" :key="index" class="list-group-item">
+      <span>{{item.label}}</span>
+      <a :href="item.absolute_url">{{item.absolute_url}}</a>
+    </li>
+  </ul>
+  <!-- {{list}} -->
 </template>
 
 <style></style>
