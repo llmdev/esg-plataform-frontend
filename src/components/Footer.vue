@@ -10,7 +10,7 @@
 <template>
   <section class="footer">
     <div class="logo">
-        <img src="./assets/logo-branco.svg" alt="">
+        <img src="../assets/logo-branco.svg" alt="">
     </div>
     <div class="mapa">
         <ul>
@@ -54,10 +54,38 @@
     .dashboard__wrapper {
         padding: 4em 2em;
     }
-  }
 
-  /* FOOTER */
-.footer {
+  }
+  @media (max-width: 576px) {
+  .mapa {
+        gap: 15%;
+    }
+
+    .mapa ul li {
+        font-size: 12px
+    }
+
+    .newsletter h2 {
+        width: fit-content;
+        font-size: 24px;
+    }
+
+    .newsletter .input {
+        height: 45px;
+        margin: 1em 0;
+    }
+
+    .input input {
+        padding: 0 1em;
+        font-size: 14px;
+        width: 120px;
+    }
+
+    .input button {
+        width: 120px;
+    }
+  }
+    .footer {
     background: #000;
     color: white;
     display: flex;
@@ -65,5 +93,55 @@
     padding-bottom: 5em;
     align-items: flex-start;
     padding-top: 10em;
+}
+
+.mapa {
+    display: flex;
+    gap: 5em;
+    color: darkgrey;
+}
+.mapa ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.mapa ul li:first-child {
+    color: #FFF;
+}
+
+.mapa ul li {
+    margin-bottom: 2em;
+    width: 80px;
+}
+
+.newsletter {
+    width: 35%;
+}
+
+.newsletter h2 {
+    font-size: 48px;
+    line-height: 1.5;
+}
+
+.newsletter .input {
+    width: 100%;
+    height: 64px;
+    display: flex;
+    margin: 3em 0;
+}
+
+.newsletter input {
+    width: 350px;
+    background: none;
+    padding: 0 2em;
+    border-radius: 12px 0 0 12px;
+    font-size: 16px;
+}
+
+.newsletter button {
+    width: 150px;
+    border-radius: 0 12px 12px 0;
+    font-size: 16px;
+    font-weight: 700;
 }
 </style>

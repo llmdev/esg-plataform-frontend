@@ -5,6 +5,7 @@
     msg: String
   })
   
+ 
   const count = ref(0)
   </script>
   
@@ -17,7 +18,7 @@
               <div class="hero__buttons">
                   <button>Como ajudar</button>
                   <button class="play_video">
-                      <img src="./assets/play_icon.svg" alt="">
+                      <img src="../assets/play_icon.svg" alt="">
                       Tocar Vídeo
                   </button>
               </div>
@@ -64,25 +65,25 @@
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
                   tristique.</p>
               <ul>
-                  <li><img src="./assets/plant-icon.svg" alt="">
+                  <li><img src="../assets/plant-icon.svg" alt="">
                       <div class="aplicativo__textos__item">
                           <h4>Alimentos para sua mente</h4><span>Vídeos, podcast, matérias e muito mais para capacitar
                               você, para poder transformar a sociedade.</span>
                       </div>
                   </li>
-                  <li><img src="./assets/plant-icon.svg" alt="">
+                  <li><img src="../assets/plant-icon.svg" alt="">
                       <div class="aplicativo__textos__item">
                           <h4>Escambo de Legumes</h4><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                               Suspendisse varius enim in eros.</span>
                       </div>
                   </li>
-                  <li><img src="./assets/water-icon.svg" alt="">
+                  <li><img src="../assets/water-icon.svg" alt="">
                       <div class="aplicativo__textos__item">
                           <h4>Conhecimento Infinito</h4><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                               Suspendisse varius enim in eros.</span>
                       </div>
                   </li>
-                  <li><img src="./assets/water-icon.svg" alt="">
+                  <li><img src="../assets/water-icon.svg" alt="">
                       <div class="aplicativo__textos__item">
                           <h4>Cuidado com a sociedade</h4><span>Lorem ipsum dolor sit amet, consectetur adipiscing
                               elit.
@@ -94,7 +95,7 @@
 
       </div>
       <div class="aplicativo__imagem">
-          <img src="./assets/fotos_aplicativo.png" alt="Folhas verde escuras com gotas de água">
+          <img src="../assets/fotos_aplicativo.png" alt="Folhas verde escuras com gotas de água">
       </div>
     </section>
     <section class="aulas__wrapper">
@@ -165,7 +166,7 @@
               </ul>
           </div>
           <div class="dashboard__imagem">
-              <img src="./assets/Chart.svg" alt="">
+              <img src="../assets/Chart.svg" alt="">
           </div>
       </div>
     </section>
@@ -193,28 +194,28 @@
           <ul>
               <li>
                   <a href="">
-                      <img src="./assets/thumbnail1.png" alt="">
+                      <img src="../assets/thumbnail1.png" alt="">
                       <h2>Aprovado projeto que flexibiliza o controle e a aprovação de agrotóxicos no Brasil</h2>
                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim</p>
                   </a>
               </li>
               <li>
                   <a href="">
-                      <img src="./assets/thumbnail2.png" alt="">
+                      <img src="../assets/thumbnail2.png" alt="">
                       <h2>O clima está mudando mais do que o esperado? </h2>
                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim</p>
                   </a>
               </li>
               <li>
                   <a href="">
-                      <img src="./assets/thumbnail3.png" alt="">
+                      <img src="../assets/thumbnail3.png" alt="">
                       <h2>10 fatos sobre fazendas que você deveria saber</h2>
                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim</p>
                   </a>
               </li>
               <li>
                   <a href="">
-                      <img src="./assets/thumbnail4.png" alt="">
+                      <img src="../assets/thumbnail4.png" alt="">
                       <h2>Temos água disponível para a próxima geração?</h2>
                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim</p>
                   </a>
@@ -243,7 +244,7 @@
                   <h2>Melhores formas de começar sua horta caseira</h2>
               </div>
               <div class="card__botao">
-                  <img src="./assets/arrow-button.svg" alt="">
+                  <img src="../assets/arrow-button.svg" alt="">
               </div>
           </div>
           <div class="evento__cards__item">
@@ -259,7 +260,7 @@
                   <h2>30 dicas importantes para manter sua horta viva</h2>
               </div>
               <div class="card__botao">
-                  <img src="./assets/arrow-button.svg" alt="">
+                  <img src="../assets/arrow-button.svg" alt="">
               </div>
           </div>
       </div>
@@ -267,7 +268,9 @@
   </template>
   
   <style scoped>
-  
+  *, .hero__buttons button {
+    font-family: 'Roboto', sans-serif;
+}
 /* HERO */
 .hero__wrapper {
     background-image: url('../assets/bg_image.png');
@@ -287,6 +290,7 @@
     color: #FFF;
     font-weight: 700;
     margin-bottom: 100px;
+    text-align: start;
 }
 
 .hero button {
@@ -315,6 +319,12 @@
 .hero__line {
     display: flex;
     color: #FFF;
+    align-items: center;
+}
+.hero__line hr {
+    height: 1px;
+    margin: 0.5em;
+    width: 100%;
 }
 
 /* SOBRE NÓS  e APLICATIVO*/
@@ -345,6 +355,8 @@
     font-size: 16px;
     font-weight: 700;
     margin-bottom: 32px;
+    text-align: start;
+    margin-top: 0;
 }
 
 .sobre-nos__textos h1,
@@ -354,6 +366,7 @@
     font-size: 48px;
     font-weight: 700;
     margin-bottom: 32px;
+    text-align: start;
 }
 
 .sobre-nos__textos p,
@@ -361,6 +374,7 @@
 .aulas__textos p,
 .dashboard__textos p {
     font-size: 16px;
+    text-align: start;
 }
 
 .sobre-nos__textos button,
@@ -409,15 +423,19 @@
 .aplicativo__textos li {
     display: flex;
     gap: 10px;
+    list-style: none;
 }
 
 .aplicativo__textos__item h4 {
     font-weight: 700;
     font-size: 24px;
+    text-align: start;
+    margin: 0;
 }
 
 .aplicativo__textos__item span {
     font-size: 16px;
+    text-align: start;
 }
 
 .aplicativo__textos h1 {
@@ -426,6 +444,7 @@
 
 .aplicativo__textos p {
     margin-bottom: 32px;
+
 }
 
 .respiro {
@@ -550,7 +569,7 @@
 
 /* PLANOS */
 .planos__wrapper {
-    width: 100%;
+    display: flex;
 }
 
 .planos {
@@ -628,6 +647,7 @@
     gap: 2em;
     justify-content: center;
     flex-wrap: wrap;
+    list-style: none;
 }
 
 .noticias__thumb ul li {
@@ -827,9 +847,15 @@
         font-size: 36px;
         width: fit-content;
     }
-
+.dashboard{
+    justify-content: flex-start;
+}
     .dashboard__textos ul {
         gap: 0.5em;
+        padding: 0;
+    }
+    .dashboard__imagem img{
+        width: fit-content;
     }
 
     .aulas {
@@ -867,7 +893,7 @@
 
     .header__menu {
         position: fixed;
-        transform: translateY(-100%);
+        transform: translateY(-102%);
         transition: transform 0.2s;
         top: 0;
         left: 0;
