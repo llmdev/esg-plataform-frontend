@@ -49,9 +49,8 @@ const count = ref(0)
                     </a>
                 </li>
                 <li class="header__menu__item login">
-                    <a href="">
-                        Log In
-                    </a>
+                    <router-link to="/Login"> Login</router-link>
+
                 </li>
             </ul>
         </nav>
