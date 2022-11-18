@@ -3,6 +3,7 @@
 
 <template>
     <section class="sobre-nos__wrapper">
+        <h1>Demutti</h1>
         <div class="sobre-nos">
             <div class="respiro">
                 <hr width="72px">

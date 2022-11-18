@@ -1,4 +1,6 @@
 <script setup>
+  import Hero from '../components/Hero.vue'
+
   import { ref } from 'vue'
   
   defineProps({
@@ -11,8 +13,8 @@
   
   <template>
     <!-- <h1>{{ msg }}</h1> -->
-    <RouterView />
-
+    <!-- <RouterView /> -->
+    <Hero />
     <section class="sobre-nos__wrapper">
       <div class="sobre-nos">
           <div class="respiro">

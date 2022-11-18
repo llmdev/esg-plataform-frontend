@@ -22,7 +22,7 @@ const count = ref(0)
         <nav class="header__menu__wrapper">
             <ul class="header__menu">
                 <li class="header__menu__item">
-                    <router-link to="/"> Página Inicial</router-link>
+                    <router-link to="/Main"> Página Inicial</router-link>
 
                     <!-- <a href="/about">
                         Página Inicial
@@ -36,9 +36,7 @@ const count = ref(0)
                     </a> -->
                 </li>
                 <li class="header__menu__item">
-                    <a href="">
-                        Conteúdo
-                    </a>
+                    <router-link to="/about"> Conteúdo</router-link>
                 </li>
                 <li class="header__menu__item">
                     <a href="">
