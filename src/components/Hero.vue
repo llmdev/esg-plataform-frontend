@@ -66,6 +66,7 @@
 }
 
 .hero .hero__buttons {
+    
     display: flex;
 }
 
