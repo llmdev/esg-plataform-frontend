@@ -45,6 +45,12 @@
   </section>
 </template>
 <style scoped>
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+li{list-style: none;}
   @media (max-width: 1199px) {
     .footer {
         margin: 1em 0 0;
@@ -56,6 +62,22 @@
     }
 
   }
+  @media (max-width: 767px) {
+    .footer {
+        padding: 1em 0;
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .newsletter {
+        width: 100%;
+    }
+
+    .newsletter h2 {
+        font-size: 30px;
+    }
+
+}
   @media (max-width: 576px) {
   .mapa {
         gap: 15%;
@@ -85,7 +107,9 @@
         width: 120px;
     }
   }
-    .footer {
+ 
+  /* FOOTER */
+.footer {
     background: #000;
     color: white;
     display: flex;
@@ -97,14 +121,10 @@
 
 .mapa {
     display: flex;
-    gap: 5em;
+    gap: 1em;
     color: darkgrey;
 }
-.mapa ul{
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
+
 .mapa ul li:first-child {
     color: #FFF;
 }
@@ -119,8 +139,8 @@
 }
 
 .newsletter h2 {
-    font-size: 48px;
-    line-height: 1.5;
+    font-size: 22px;
+    width: fit-content;
 }
 
 .newsletter .input {
@@ -128,14 +148,16 @@
     height: 64px;
     display: flex;
     margin: 3em 0;
+    
 }
 
 .newsletter input {
-    width: 350px;
+    width: fit-content;
+    padding: 0 0 0 1em;
     background: none;
-    padding: 0 2em;
     border-radius: 12px 0 0 12px;
     font-size: 16px;
+    justify-content: center;
 }
 
 .newsletter button {
