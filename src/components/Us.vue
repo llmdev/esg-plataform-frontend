@@ -2,7 +2,9 @@
 import { ref } from 'vue'
 
 export default {
-    mounted() {        }
+    mounted() {  
+        
+          }
 }
 
 const count = ref(0)

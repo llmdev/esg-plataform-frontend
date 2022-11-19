@@ -1,4 +1,11 @@
 <script>
+
+let  usuario = document.querySelector('#usuario');
+let  email = document.querySelector('#email');
+let  senha = document.querySelector('#senha');
+
+
+
 </script>
 <template>
   <section class="login__wrapper">
@@ -12,8 +19,8 @@
             </a>
             <p>Está na hora de fazer parte de grandes discussões, aprender novas formas de cuidar e fortalecer a sua horta.</p>
             <div class="login__usuario__wrapper">
-                <label for="usuario" class="login__usuario__label">E-mail</label>
-                <input id="usuario" type="text" class="login__usuario__input" placeholder="James_bond_bola@gmail.com">
+                <label for="usuario" class="login__usuario__label">Usuário</label>
+                <input id="usuario" type="text" class="login__usuario__input" placeholder="Joana da Silva">
             </div>
             <div class="login__email__wrapper">
                 <label for="email" class="login__email__label">E-mail</label>
@@ -37,7 +44,7 @@
         </div>
 
     </div>
-    <div class="login__imagem">
+    <div class="cadastro__imagem">
     </div>
 </section>
 </template>
@@ -83,7 +90,7 @@ gap: 16px;
   font-weight: 700;
 }
 
-.login__imagem {
+.cadastro__imagem {
   width: 50%;
   background-image: url('../assets/fotos_cadastro.png');
   background-size: cover;

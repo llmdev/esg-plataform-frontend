@@ -18,7 +18,17 @@ export default {
             this.list = response.data;
             this.fetching = false
           })
-        }
+        },
+      fetchData() {
+        axios.get('https://api.hubapi.com/content/api/v2/blog-posts?hapikey=demo',{
+          withCredentials: false,
+        })
+          .then(response => {
+            this.list = response.data;
+            this.fetching = false
+          })
+        },
+
     },
     mounted() {
       this.fetchData();

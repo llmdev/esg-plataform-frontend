@@ -1,4 +1,8 @@
-<script setup></script>
+<script setup>
+  import { ref } from 'vue'
+  import axios from 'axios'
+  
+</script>
 <template>
   <section class="login__wrapper">
     <div class="login">
