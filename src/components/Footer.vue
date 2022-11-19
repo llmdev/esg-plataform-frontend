@@ -121,7 +121,12 @@ li{list-style: none;}
     }
 
   }
-  @media (max-width: 767px) {
+@media (max-width: 991px) {
+  .input input, .input buttton{
+    font-size: 14px;
+  }
+}
+@media (max-width: 767px) {
     .footer {
         padding: 1em 0;
         flex-direction: column;

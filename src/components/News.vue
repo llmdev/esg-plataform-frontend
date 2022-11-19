@@ -97,7 +97,7 @@
         margin-bottom: 1em;
     }
     .noticias__header {
-        margin: 1em;
+        margin: 1em 0;
     }
 
     .noticias__header h1 {
@@ -113,8 +113,5 @@
         width: 100%;
         flex-direction: column;
     }
-
 }
-
-
 </style>

@@ -16,11 +16,7 @@ const count = ref(0)
                 <hr width="72px">
             </div>
             <div class="sobre-nos__textos">
-              <router-link to="/">Sobre Nooos</router-link>
-  
-                <!-- <a href="./pages/about.html">
-                    <h3>SOBRE NÓS</h3>
-                </a> -->
+              <router-link to="/about">Sobre Nós</router-link>
                 <h1>Ajudamos a natureza sorrir e sobreviver em todo lugar</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
                     tristique.</p>

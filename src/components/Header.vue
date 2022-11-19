@@ -23,17 +23,9 @@ const count = ref(0)
             <ul class="header__menu">
                 <li class="header__menu__item">
                     <router-link to="/Main"> Página Inicial</router-link>
-
-                    <!-- <a href="/about">
-                        Página Inicial
-                    </a> -->
                 </li>
                 <li class="header__menu__item">
                     <router-link to="/about"> Notícias</router-link>
-
-                    <!-- <a href="">
-                        Notícias
-                    </a> -->
                 </li>
                 <li class="header__menu__item">
                     <router-link to="/about"> Conteúdo</router-link>
@@ -48,7 +40,7 @@ const count = ref(0)
                         Parceiros
                     </a>
                 </li>
-                <li class="header__menu__item login">
+                <li class="header__menu__item log-in">
                     <router-link to="/Login"> Login</router-link>
 
                 </li>
@@ -100,7 +92,7 @@ header {
     color: #000;
 }
 
-.header__menu__item.login a {
+.header__menu__item.log-in a {
     display: flex;
     background-color: black;
     color: #FFF;
@@ -139,7 +131,7 @@ header {
         color: #FFF;
         font-size: 24px;
     }
-    .header__menu__item.login a{
+    .header__menu__item.log-in a{
         background: none;
     }
     .hamburguer {

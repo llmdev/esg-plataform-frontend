@@ -1,12 +1,4 @@
 <script setup>
-  import { ref } from 'vue'
-  
-  defineProps({
-    msg: String
-  })
-  
- 
-  const count = ref(0)
 </script>
 
 <template>
@@ -117,7 +109,6 @@
     text-align: start;
     margin: 0;
 }
-
 .aplicativo__textos__item span {
     font-size: 16px;
     text-align: start;
@@ -135,25 +126,21 @@
     .aplicativo__textos ul li img {
         width: fit-content;
     }
-
     .aplicativo__textos h1 {
         font-size: 36px;
         width: fit-content;
         margin: 0 0 1em;
     }
-
     .dashboard__textos__item,
     .header__menu__item {
         font-size: 12px;
     }
-
     .aulas__textos h1 {
         font-size: 36px;
         width: fit-content;
     }
 }
 @media (max-width: 767px) {
-
     .aplicativo__wrapper {
         background-image: linear-gradient(rgba(0, 0, 0, 0.5),
                 rgba(0, 0, 0, 0.5)), url('../assets/fotos_aplicativo.png');
@@ -166,7 +153,6 @@
     .aplicativo{
         width: fit-content;
     }
-
     .aplicativo__imagem img {
         display: none;
     }
@@ -184,22 +170,16 @@
         width: fit-content;
         color: #FFF;
     }
-
     .aplicativo .respiro {
         display: none;
     }
-
     .aplicativo__textos__item h4,
     .aulas__textos__item h4 {
         font-size: 18px;
     }
-
     .aplicativo__textos__item span,
     .aulas__textos__item p {
         font-size: 14px;
     }
-
 }
-
-
 </style>

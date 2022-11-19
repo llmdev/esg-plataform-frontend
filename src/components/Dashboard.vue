@@ -152,6 +152,7 @@ ul, li {
     }
     .dashboard__imagem img{
         width: fit-content;
+        margin: 2em auto;
     }
 }
 @media (max-width: 767px) {

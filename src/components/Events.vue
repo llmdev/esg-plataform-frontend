@@ -118,6 +118,7 @@
 
 .card__evento .embreve p {
     font-size: 16px;
+    margin: 0;
 }
 
 .card__evento h2 {
@@ -169,6 +170,7 @@
     }
     .evento__cards__item{
         padding: 1em;
+        height: 140px;
     }
     .embreve p{
         margin: 0.5em 0;
@@ -197,7 +199,10 @@
         font-size: 28px;
     }
     .card__evento h2 {
-        font-size: 18px;
+        font-size: 16px;
+    }
+    .card__botao img{
+        width: 40px;
     }
 }
 </style>

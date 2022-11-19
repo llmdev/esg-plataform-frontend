@@ -1,27 +1,16 @@
 <script setup>
   import { ref } from 'vue'
   import Hero from '../components/Hero.vue'
-//   sobre nós
+  import Us from './Us.vue'
   import Aplicativo from './Aplicativo.vue';
   import Learn from './Learn.vue';
   import Dashboard from './Dashboard.vue'
   import Subscription from './Subscription.vue'
   import News from './News.vue'
   import Events from './Events.vue'
-  import Us from './Us.vue'
-
-  
-  defineProps({
-    msg: String
-  })
-  
- 
-  const count = ref(0)
 </script>
   
-  <template>
-    <!-- <h1>{{ msg }}</h1> -->
-    <!-- <RouterView /> -->
+<template>
     <Hero />
     <Us />
     <Aplicativo />
@@ -30,9 +19,8 @@
     <Subscription />
     <News />
     <Events />
- 
-  </template>
+</template>
   
-  <style scoped>
-  </style>
+<style scoped>
+</style>
   

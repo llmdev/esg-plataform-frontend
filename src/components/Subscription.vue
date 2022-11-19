@@ -88,6 +88,13 @@ ul, li {
         display: none;
     }
 }
+
+@media (max-width: 767px) {
+    .planos h1 {
+        width: fit-content;
+    }
+}
+
 @media (max-width: 576px) {
     .planos h1 {
         font-size: 24px;
