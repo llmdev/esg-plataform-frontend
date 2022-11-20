@@ -65,7 +65,7 @@ li{list-style: none;}
 
 .mapa {
     display: flex;
-    gap: 1em;
+    gap: 25%;
     color: darkgrey;
 }
 
