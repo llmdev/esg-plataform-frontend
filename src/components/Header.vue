@@ -51,16 +51,14 @@ const count = ref(0)
                 <li class="header__menu__item">
                     <router-link to="/about"> Notícias</router-link>
                 </li>
-                <li class="header__menu__item">
+                <!-- <li class="header__menu__item">
                     <router-link to="/about"> Conteúdo</router-link>
-                </li>
+                </li> -->
                 <li class="header__menu__item">
                         <router-link to="/hotnews">Fórum</router-link>
                 </li>
-                <li class="header__menu__item">
-                    <a href="">
-                        Parceiros
-                    </a>
+                <li v-if="isLogged" class="header__menu__item">
+                    <router-link to="/logged" > Meu Perfil</router-link>
                 </li>
                 <li class="header__menu__item log-in">
                     <button class="logout-button" v-if="isLogged" @click="logout"> Sair</button>

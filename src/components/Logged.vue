@@ -1,19 +1,45 @@
-<script></script>
+<script>
+import axios from 'axios';
+
+export default {
+    data() {
+        return {
+            user: {},
+            points: 0,
+            topics: 0,
+            comments: 0
+        }
+    },
+    mounted() {
+        const user = JSON.parse(localStorage.getItem('user'));
+        if(user) {
+            this.user = user
+        }
+
+        axios.get('https://esg-api-nu.vercel.app/user',{headers: { Authorization: `Bearer ${this.user.token}` }})
+        .then(({ data }) => {
+            this.points = data.points
+            this.topics = data.topics
+            this.comments = data.comments
+        })
+    }
+}
+</script>
 <template>
     <section class="profile__wrapper">
         <div class="profile__card__wrapper">
-            <img class="profile__card__image" src="../assets/christian.png" alt="">
+            <img class="profile__card__image" src="../assets/profile.jpg" alt="">
             <div class="profile__card__nickname">
-                @Christianhsmartins
+                @{{ user.nickname}}
             </div>
             <div class="profile__card__description">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh.</p>
             </div>
             <div class="profile__card__score__wrapper">
                 <ul class="profile__card__score">
-                    <li class="profile__card__score__item">85<span>Pontos</span></li>
-                    <li class="profile__card__score__item">13<span>Tópicos</span></li>
-                    <li class="profile__card__score__item">28<span>Comentários</span></li>
+                    <li class="profile__card__score__item">{{ points }}<span>Pontos</span></li>
+                    <li class="profile__card__score__item">{{ topics }}<span>Tópicos</span></li>
+                    <li class="profile__card__score__item">{{ comments }}<span>Comentários</span></li>
                     <li class="profile__card__score__item">0<span>Cursos</span></li>
                 </ul>
             </div>

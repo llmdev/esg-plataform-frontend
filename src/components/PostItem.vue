@@ -1,24 +1,70 @@
 <script>
+import axios from 'axios';
+
+
+
+export default {
+    data() {
+        return {
+            isLogged: false,
+            topic: {},
+            comments: [],
+            user: {},
+            commentInput: '',
+        }
+    },
+    mounted() {
+        const topicId = this.$route.query.id;
+        axios.get(`https://esg-api-nu.vercel.app/topic/${topicId}`).then( ({data}) => {
+            this.topic = data.topic
+        });
+
+        axios.get(`https://esg-api-nu.vercel.app/comments/topic/${topicId}`).then( ({data}) => {
+            this.comments = data.comments
+        });
+
+        const user = JSON.parse(localStorage.getItem('user'));
+        if(user) {
+            this.isLogged = true;
+            this.user = user;
+        }
+    },
+    methods: {
+        makeComment() {
+            axios.post('https://esg-api-nu.vercel.app/comments', 
+            {
+                content: this.commentInput,
+                topicId: this.$route.query.id,
+            }, {headers: { Authorization: `Bearer ${this.user.token}` }})
+            .then( ({data}) => {
+                this.comments.push({ content: data.comment.content, nickname: this.user.nickname, id: data.comment.id} );
+                this.commentInput = ''
+            });
+        }
+    }
+}
 </script>
 
 <template>
     <div class="post-item__wrapper">
         <div class="post-item">
-            <h3>Horta</h3>
-            <h1>Topico</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas culpa facere dolore, dicta debitis neque error quia exercitationem perspiciatis harum quibusdam nostrum, et in asperiores reiciendis distinctio, provident nihil pariatur.
-            Voluptatum delectus minus mollitia error esse earum quia aliquam hic nesciunt quae doloribus ipsum, eaque ut porro itaque vero. Sapiente, consequatur laboriosam dolore autem sunt magni ex vitae illum minus.
-            </p>
+            <h3>{{ topic.title_category}}</h3>
+            <h2>@{{ topic.nickname }}</h2>
+            <h1>{{ topic.title }}</h1>
+            <p>{{ topic.content }}</p>
         </div>
-        <div class="see-comment">
-            <h2>Comentário #1 <span class="nickname">Usuário #1</span></h2>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet, veritatis enim. Dolorum, fugit delectus. Quidem doloribus soluta magni inventore aspernatur, quia, cupiditate deserunt commodi distinctio recusandae obcaecati aperiam eligendi nostrum.</p>
+        <div v-for="comment in comments" :key="comment.id" class="see-comment">
+            <h2>Comentário #{{ comment.id}} <span class="nickname">@{{ comment.nickname}}</span></h2>
+            <p>{{ comment.content }}</p>
         </div>
-        <div class="make-comment">
-            <textarea name="" id="" cols="30" rows="10">
-        
+        <div v-if="!isLogged">
+            <h6 style="text-align: center">Para comentar, basta fazer o  <router-link to="/login" >login</router-link>.</h6>
+        </div>
+        <div v-if="isLogged" class="make-comment">
+            <h6 style="text-align: left">Fazer um comentario</h6>
+            <textarea name="" v-model="commentInput" id="" cols="30" rows="10">
             </textarea>
-            <button>
+            <button :disabled="commentInput.length < 5" @click="makeComment" style="align-self: flex-end;">
                 Comentar
             </button>
         </div>
@@ -39,14 +85,24 @@
 .make-comment{
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+
 }
 textarea{
     width: 100%
 }
 .make-comment button{
     text-align: end;
+    color: white;
+    margin-top: 20px;
+    display: flex;
+    max-width: 200px;
+    justify-content: center;
 }
+
+.make-comment button:disabled{
+    opacity: 0.2;
+}
+
 .nickname{
     color: grey;
     text-decoration: underline;
