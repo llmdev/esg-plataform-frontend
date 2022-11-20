@@ -4,14 +4,32 @@ import axios from 'axios';
 export default {
     data() {
         return {
-            categories: []
+            categories: [],
+            selectedCategory: 1,
+            topics: [],
+            loading: true,
+            topics: []
         }
     },
     mounted() {
         axios.get('https://esg-api-nu.vercel.app/categories').then( ({data}) => {
             this.categories = data.categories
         })
+        axios.get(`https://esg-api-nu.vercel.app/topic/category/${this.selectedCategory}`).then( ({data}) => {
+            this.topics = data.topics;
+            this.loading = false;
+        })
     },
+    methods: {
+        onChangeCategory(category) {
+            this.loading = true;
+            this.selectedCategory = category.id
+            axios.get(`https://esg-api-nu.vercel.app/topic/category/${category.id}`).then( ({data}) => {
+                this.topics = data.topics;
+                this.loading = false;
+            })
+        }
+    }
 }
 </script>
 
@@ -23,8 +41,8 @@ export default {
                     Categorias
                 </span>
             </li>
-            <li v-for="category of categories" :key="category.id" class="categorias__item selected button">
-                <button class="categorias__item__button">
+            <li v-for="category of categories" :key="category.id" v-bind:class="{ 'categorias__item__button': true, selected: selectedCategory === category.id, }">
+                <button @click="onChangeCategory(category)" class="categorias__item__button">
                     {{ category.title }}
                 </button>
             </li>
@@ -32,71 +50,33 @@ export default {
     </div>
     <div class="meu__eventos__wrapper topic">
         <div class="meu_eventos__cards topic"> 
-            <div class="meu_evento__cards__item topic">
+
+            <div class="loader" v-if="loading">
+              <img src="../assets/loader.gif" width="100" />
+            </div>
+
+            <div v-if="topics.length === 0 && !loading" class="meu_evento__cards__item topic">
                 <div class="textos">
                     <div class="meu_card__data">
-                        <p class="meu_card__data__dia topic">Assunto da Vez</p>
+                        <p class="meu_card__data__dia topic">Nao possui topico cadastrado nesta categoria.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div v-for="topic of topics" :key="topic.id" class="meu_evento__cards__item topic">
+                <div class="textos">
+                    <div class="meu_card__data">
+                        <p class="meu_card__data__dia topic">{{ topic.title }}</p>
                     </div>
                     <div class="meu_card__evento">
-                        <h2>Melhores formas de começar sua horta caseira</h2>
+                        <h2>{{ topic.content.split(/\s+/).slice(0, 10).join(" ") + '...'}}</h2>
                     </div>
                 </div>
                 <div class="meu_card__botao">
                     <img src="../assets/arrow-button.svg" alt="">
                 </div>
             </div>
-            <div class="meu_evento__cards__item topic">
-                <div class="textos">
-                    <div class="meu_card__data">
-                        <p class="meu_card__data__dia topic">Assunto da Vez</p>
-                    </div>
-                    <div class="meu_card__evento">
-                        <h2>Melhores formas de começar sua horta caseira</h2>
-                    </div>
-                </div>
-                <div class="meu_card__botao">
-                    <img src="../assets/arrow-button.svg" alt="">
-                </div>
-            </div>
-            <div class="meu_evento__cards__item topic">
-                <div class="textos">
-                    <div class="meu_card__data">
-                        <p class="meu_card__data__dia topic">Assunto da Vez</p>
-                    </div>
-                    <div class="meu_card__evento">
-                        <h2>Melhores formas de começar sua horta caseira</h2>
-                    </div>
-                </div>
-                <div class="meu_card__botao">
-                    <img src="../assets/arrow-button.svg" alt="">
-                </div>
-            </div>
-            <div class="meu_evento__cards__item topic">
-                <div class="textos">
-                    <div class="meu_card__data">
-                        <p class="meu_card__data__dia topic">Assunto da Vez</p>
-                    </div>
-                    <div class="meu_card__evento">
-                        <h2>Melhores formas de começar sua horta caseira</h2>
-                    </div>
-                </div>
-                <div class="meu_card__botao">
-                    <img src="../assets/arrow-button.svg" alt="">
-                </div>
-            </div>
-            <div class="meu_evento__cards__item topic">
-                <div class="textos">
-                    <div class="meu_card__data">
-                        <p class="meu_card__data__dia topic">Assunto da Vez</p>
-                    </div>
-                    <div class="meu_card__evento">
-                        <h2>Melhores formas de começar sua horta caseira</h2>
-                    </div>
-                </div>
-                <div class="meu_card__botao">
-                    <img src="../assets/arrow-button.svg" alt="">
-                </div>
-            </div>
+            
         </div>
     </div>
 </template>
@@ -112,7 +92,9 @@ export default {
     display: flex;
     gap: 1em;
 }
-.categorias__item__button{
+.categorias__item__button {
+    outline: none;
+    background: none;
     display: flex;
     align-items: center;
     height: 100%;
@@ -122,6 +104,7 @@ export default {
     background: #70C174;
     color: #FFF;
     border: none;
+    outline: none;
 }
 .meu_evento__cards__item.topic{
     background-color: #f9f9f9;
