@@ -1,22 +1,45 @@
 <script>
+import axios from 'axios';
+
+
 export default {
   data(){
     return {
-      usuario: 'dndfansfdinasdfafdsfsa',
-      email: 'asdfasbqdf b ew fw',
-      senha: 'alguem me ajuda',
+      nickname: '',
+      name: '',
+      email: '',
+      password: '',
+      loading: false,
+      err: '',
+      success: ''
     }
   },
   methods: {
-    cadastrarUsuraio(){
-      console.log('oi');
+    cadastrar(e){
+      e.preventDefault()
+      this.loading = true
+      this.err = ''
+      axios.post('https://esg-api-nu.vercel.app/signin', {
+        nickname: this.nickname,
+        name: this.name,
+        email: this.email,
+        password: this.password
+      })
+      .then(({data}) => {
+        this.loading = false
+        this.success = data.message
+        this.name = ''
+        this.nickname = ''
+        this.email = ''
+        this.password = ''
+      })
+      .catch( err => {
+        this.loading = false
+        this.err = err.response.data.error
+      })
     }
   }
 }
-
-
-
-
 </script>
 <template>
   <section class="login__wrapper">
@@ -31,22 +54,31 @@ export default {
             <p>Está na hora de fazer parte de grandes discussões, aprender novas formas de cuidar e fortalecer a sua horta.</p>
             <div class="login__usuario__wrapper">
                 <label for="usuario" class="login__usuario__label">Usuário</label>
-                <input id="usuario" type="text" class="login__usuario__input" placeholder="Joana da Silva">
+                <input id="usuario" :disabled="loading" v-model="nickname"  type="text" class="login__usuario__input" placeholder="@seuusario">
+            </div>
+            <div class="login__usuario__wrapper">
+                <label for="usuario" class="login__usuario__label">Nome completo</label>
+                <input id="usuario" :disabled="loading" v-model="name"  type="text" class="login__usuario__input" placeholder="Nome Completo">
             </div>
             <div class="login__email__wrapper">
                 <label for="email" class="login__email__label">E-mail</label>
-                <input id="email" type="text" class="login__email__input" placeholder="email@dominio.com.br">
+                <input id="email" :disabled="loading" v-model="email" type="text" class="login__email__input" placeholder="email@dominio.com.br">
             </div>
             <div class="login__senha__wrapper">
                 <label for="senha" class="login__senha__label">Senha</label>
-                <input id="senha" type="text" class="login__senha__input" placeholder="Insira sua senha">
+                <input id="senha" :disabled="loading" v-model="password" type="password" class="login__senha__input" placeholder="Insira sua senha">
             </div>
+            <p class="login__error-message" v-if="err">{{err}}</p>
+            <p class="login__success-message" v-if="success">{{success}}</p>
             <router-link to="/logged">
-              <button class="entrar" v-on:click="cadastrarUsuario" >Cadastrar</button>
+              <button class="entrar" @click="cadastrar" v-if="!loading" >Cadastrar</button>
             </router-link>
+            <div class="loader" v-if="loading">
+              <img src="../assets/loader.gif" width="40" />
+            </div>
             <button class="esqueci">Esqueceu a senha?</button>
         </div>
-        <div v-on:click="cadastrarUsuario"  class="cadastrar">
+        <div class="cadastrar">
             <p>Já tem conta? 
                <a href="./Login.vue">
                    Fazer Log In.
@@ -147,6 +179,16 @@ gap: 16px;
 }
 .cadastrar p a{
   color: #70C174;
+}
+
+.login__error-message {
+  color: red;
+  font-size: 12px;
+}
+
+.login__success-message {
+  color: green;
+  font-size: 12px;
 }
 
 @media (max-width:576px){
