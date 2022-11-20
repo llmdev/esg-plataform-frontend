@@ -1,48 +1,37 @@
-<script setup>
+<script>
+import axios from 'axios';
+
+export default {
+    data() {
+        return {
+            categories: []
+        }
+    },
+    mounted() {
+        axios.get('https://esg-api-nu.vercel.app/categories').then( ({data}) => {
+            this.categories = data.categories
+        })
+    },
+}
 </script>
 
 <template>
     <div class="categorias__wrapper">
         <ul class="categorias">
             <li class="categorias__item">
-                <button class="categorias__item__button">
+                <span class="categorias__item__button">
                     Categorias
-                </button>
+                </span>
             </li>
-            <li class="categorias__item selected button">
+            <li v-for="category of categories" :key="category.id" class="categorias__item selected button">
                 <button class="categorias__item__button">
-                    Novos
-                </button>
-            </li>
-            <li class="categorias__item">
-                <button class="categorias__item__button">
-                    Horta
-                </button>
-            </li>
-            <li class="categorias__item">
-                <button class="categorias__item__button">
-                    Suculentas
-                </button>
-            </li>
-            <li class="categorias__item">
-                <button class="categorias__item__button">
-                    Temperos
-                </button>
-            </li>
-            <li class="categorias__item">
-                <button class="categorias__item__button">
-                    Adubos
-                </button>
-            </li>
-            <li class="categorias__item">
-                <button class="categorias__item__button">
-                    Vasos
+                    {{ category.title }}
                 </button>
             </li>
         </ul>
     </div>
     <div class="meu__eventos__wrapper topic">
-        <div class="meu_eventos__cards topic">
+        <div class="meu_eventos__cards topic"> 
             <div class="meu_evento__cards__item topic">
                 <div class="textos">
                     <div class="meu_card__data">
@@ -124,7 +113,9 @@
     gap: 1em;
 }
 .categorias__item__button{
-    background: none;
+    display: flex;
+    align-items: center;
+    height: 100%;
     border-bottom: 1px solid #f9f9f9;
 }
 .selected button{

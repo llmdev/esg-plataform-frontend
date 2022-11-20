@@ -2,7 +2,31 @@
 import { ref } from 'vue'
 
 export default {
-    mounted() {        }
+    data() {
+        return {
+            isLogged: false
+        }
+    },
+    watch:{
+        $route (){
+            const user = JSON.parse(localStorage.getItem('user'));
+            if(user) {
+                this.isLogged = true
+            }
+        }
+    },
+    mounted() {
+        const user = JSON.parse(localStorage.getItem('user'));
+        if(user) {
+            this.isLogged = true
+        }
+    },
+    methods: {
+        logout() {
+            this.isLogged = false
+            localStorage.removeItem('user');
+        }
+    }
 }
 
 const count = ref(0)
@@ -39,8 +63,8 @@ const count = ref(0)
                     </a>
                 </li>
                 <li class="header__menu__item log-in">
-                    <router-link to="/Login"> Login</router-link>
-
+                    <button class="logout-button" v-if="isLogged" @click="logout"> Sair</button>
+                    <router-link to="/Login" v-if="!isLogged" > Login</router-link>
                 </li>
             </ul>
         </nav>
@@ -70,6 +94,9 @@ header {
 
 }
 
+.logout-button {
+    color: white;
+}
 .header {
     display: flex;
     justify-content: center;
