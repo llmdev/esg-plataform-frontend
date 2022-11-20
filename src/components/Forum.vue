@@ -43,19 +43,21 @@
     </div>
     <div class="meu__eventos__wrapper topic">
         <div class="meu_eventos__cards topic">
-            <div class="meu_evento__cards__item topic">
-                <div class="textos">
-                    <div class="meu_card__data">
-                        <p class="meu_card__data__dia topic">Assunto da Vez</p>
+            <router-link to="/ForumItem">
+                <div class="meu_evento__cards__item topic">
+                    <div class="textos">
+                        <div class="meu_card__data">
+                            <p class="meu_card__data__dia topic">Assunto da Vez</p>
+                        </div>
+                        <div class="meu_card__evento">
+                            <h2>Melhores formas de começar sua horta caseira</h2>
+                        </div>
                     </div>
-                    <div class="meu_card__evento">
-                        <h2>Melhores formas de começar sua horta caseira</h2>
+                    <div class="meu_card__botao">
+                        <img src="../assets/arrow-button.svg" alt="">
                     </div>
                 </div>
-                <div class="meu_card__botao">
-                    <img src="../assets/arrow-button.svg" alt="">
-                </div>
-            </div>
+                </router-link>
             <div class="meu_evento__cards__item topic">
                 <div class="textos">
                     <div class="meu_card__data">
