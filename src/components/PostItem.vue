@@ -39,6 +39,10 @@
 .make-comment{
     display: flex;
     flex-direction: column;
+    align-items: flex-end;
+}
+textarea{
+    width: 100%
 }
 .make-comment button{
     text-align: end;
