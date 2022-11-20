@@ -291,6 +291,9 @@ export default {
 }
 @media (max-width:991px){
     
+.sobre-nos__wrapper{
+    flex-direction: column;
+
 }
 .meu_eventos__wrapper{
     margin: 0;
@@ -298,6 +301,7 @@ export default {
     display: flex;
     gap: 10px;
     flex-direction: column;
+}
     .profile__card__image {
         width: 100%;
         flex-direction: column;
