@@ -1,7 +1,45 @@
-<script setup>
-  import { ref } from 'vue'
-  import axios from 'axios'
-  
+<script>
+  import axios from 'axios';
+
+  export default {
+    data(){
+      return {
+        email: '',
+        password: '',
+        loading: false,
+        err: '',
+        success: ''
+      }
+    },
+    methods: {
+      login(e) {
+        e.preventDefault();
+        this.loading = true;
+        axios.post('https://esg-api-nu.vercel.app/login', {
+          email: this.email,
+          password: this.password
+        })
+        .then(({data}) => {
+          this.loading = false;
+          console.log(data.message);
+          this.success = data.message;
+          this.createLocalStorage(data)
+
+          setTimeout(() => {
+            this.$router.push('/Main')
+          }, 2000);
+        })
+        .catch((data) => {
+          this.loading = false;
+          this.err = data.response.data.error
+        })
+      },
+      createLocalStorage({user}) {
+        localStorage.removeItem('user');
+        localStorage.setItem('user', JSON.stringify(user));
+      }
+    }
+  }
 </script>
 <template>
   <section class="login__wrapper">
@@ -16,20 +54,23 @@
             <p>Está na hora de fazer parte de grandes discussões, aprender novas formas de cuidar e fortalecer a sua horta.</p>
             <div class="login__email__wrapper">
                 <label for="email" class="login__email__label">E-mail</label>
-                <input id="email" type="text" class="login__email__input" placeholder="email@dominio.com.br">
+                <input id="email" type="text" v-model="email" class="login__email__input" placeholder="email@dominio.com.br">
             </div>
             <div class="login__senha__wrapper">
                 <label for="senha" class="login__senha__label">Senha</label>
-                <input id="senha" type="text" class="login__senha__input" placeholder="Insira sua senha">
+                <input id="senha" type="password" v-model="password" class="login__senha__input" placeholder="Insira sua senha">
             </div>
-            <button class="entrar">Baixe agora</button>
+            <p class="login__error-message" v-if="err">{{err}}</p>
+            <p class="login__success-message" v-if="success">{{success}}, login realizado com sucesso, vc sera redirecionado.</p>
+            <button class="entrar" v-if="!loading" @click="login">Entrar</button>
+            <div class="loader" v-if="loading">
+              <img src="../assets/loader.gif" width="40" />
+            </div>
             <button class="esqueci">Esqueceu a senha?</button>
         </div>
         <div class="cadastrar">
             <p>Ainda não faz parte deste universo? 
               <router-link to="/cadastro">Criar conta.</router-link>
-                   
-             
             </p>
         </div>
 
