@@ -140,6 +140,7 @@ export default {
 }
 .profile__card__image{
     max-width: 300px;
+    border-radius: 5px;
 }
 .profile__card__description p {
     text-align: center;
@@ -297,6 +298,13 @@ export default {
     display: flex;
     gap: 10px;
     flex-direction: column;
+    .profile__card__image {
+        width: 100%;
+        flex-direction: column;
+    }
+    .item__wrapper{
+        height: 145px;
+    }
 }
 @media (max-width:767px){
     .profile__wrapper{
@@ -305,10 +313,6 @@ export default {
     .profile__card__wrapper{
         width: fit-content;
     }
-    .profile__card__image {
-        width: 100%;
-    }
-
     .profile__learn{
         margin: 0 auto;
         padding: 2em 0;

@@ -80,9 +80,7 @@ export default {
         </div>
         <div class="cadastrar">
             <p>Já tem conta? 
-               <a href="./Login.vue">
-                   Fazer Log In.
-                </a>
+              <router-link to="/login"> Fazer Log In.</router-link>
             </p>
         </div>
 
