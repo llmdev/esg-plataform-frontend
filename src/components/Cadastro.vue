@@ -1,8 +1,19 @@
 <script>
+export default {
+  data(){
+    return {
+      usuario: 'dndfansfdinasdfafdsfsa',
+      email: 'asdfasbqdf b ew fw',
+      senha: 'alguem me ajuda',
+    }
+  },
+  methods: {
+    cadastrarUsuraio(){
+      console.log('oi');
+    }
+  }
+}
 
-let  usuario = document.querySelector('#usuario');
-let  email = document.querySelector('#email');
-let  senha = document.querySelector('#senha');
 
 
 
@@ -31,13 +42,13 @@ let  senha = document.querySelector('#senha');
                 <input id="senha" type="text" class="login__senha__input" placeholder="Insira sua senha">
             </div>
             <router-link to="/logged">
-              <button class="entrar">Entrar</button>
+              <button class="entrar" v-on:click="cadastrarUsuario" >Cadastrar</button>
             </router-link>
             <button class="esqueci">Esqueceu a senha?</button>
         </div>
-        <div class="cadastrar">
+        <div v-on:click="cadastrarUsuario"  class="cadastrar">
             <p>Já tem conta? 
-               <a href="../pages/login.html">
+               <a href="./Login.vue">
                    Fazer Log In.
                 </a>
             </p>

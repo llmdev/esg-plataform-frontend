@@ -31,9 +31,7 @@ const count = ref(0)
                     <router-link to="/about"> Conteúdo</router-link>
                 </li>
                 <li class="header__menu__item">
-                    <a href="">
-                        Fórum
-                    </a>
+                        <router-link to="/hotnews">Fórum</router-link>
                 </li>
                 <li class="header__menu__item">
                     <a href="">

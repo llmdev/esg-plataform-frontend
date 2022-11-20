@@ -81,21 +81,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="meu_eventos__cards">
-                        <div class="meu_evento__cards__item">
-                            <div class="textos">
-                                <div class="meu_card__data">
-                                    <p class="meu_card__data__dia">20 ABR</p>
-                                </div>
-                                <div class="meu_card__evento">
-                                    <h2>Melhores formas de começar sua horta caseira</h2>
-                                </div>
-                            </div>
-                            <div class="meu_card__botao">
-                                <img src="../assets/arrow-button.svg" alt="">
-                            </div>
-                        </div>
-                    </div>
                 </section>
             </div>
         </div>
@@ -104,7 +89,9 @@
 <style>
 .profile__wrapper {
     display: flex;
-    align-items: center;
+    align-items: start;
+    gap: 2em;
+    margin: 0 2em;
 }
 .profile__card__wrapper{
     background-color: #000;
@@ -113,9 +100,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 24px;
+    gap: 5em;
     border-radius: 12px;
-    margin: 3em;
     padding: 2em;
     width: 40%;
     height: fit-content;
@@ -217,6 +203,8 @@
     padding: 2em;
     background-color:  #E5EAF2;
     margin-right: 3em;
+    width: 86%;
+    border-radius: 12px;
 }
 .meu_eventos{
    gap: 0;

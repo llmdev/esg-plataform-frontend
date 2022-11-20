@@ -79,7 +79,7 @@ li{list-style: none;}
 }
 
 .newsletter {
-    width: 35%;
+    width: fit-content;
 }
 
 .newsletter h2 {

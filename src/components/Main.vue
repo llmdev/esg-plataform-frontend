@@ -8,9 +8,11 @@
   import Subscription from './Subscription.vue'
   import News from './News.vue'
   import Events from './Events.vue'
+  import HotNews from './HotNews.vue'
 </script>
   
 <template>
+
     <Hero />
     <Us />
     <Aplicativo />

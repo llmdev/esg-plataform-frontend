@@ -8,7 +8,7 @@
     <div class="login">
         <div class="login__textos">
             <a href=".#">
-                <div class="respiro">
+                <div class="respiro__login">
                     <hr width="72px">
                 </div>
                 <h3>Faça login</h3>
@@ -42,7 +42,7 @@
 * {
   font-size: 16px;
 }
-.respiro{
+.respiro__login{
   display: flex;
   align-items: center;
 }
@@ -144,7 +144,7 @@
     color: #FFF;
     width: 100%;
   }
-  .login__textos a h3, .respiro hr{
+  .login__textos a h3, .respiro__login hr{
     color: #FFF;
   }
   .esqueci{
