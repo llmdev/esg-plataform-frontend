@@ -6,6 +6,8 @@ import Cadastro from '../components/Cadastro.vue'
 import Logged from '../components/Logged.vue'
 import Posts from '../components/Posts.vue'
 import HotNews from '../components/HotNews.vue'
+import ForumItem from '../components/ForumItem.vue'
+import PostItem from '../components/PostItem.vue'
 
 
 
@@ -44,6 +46,16 @@ const routes = [
         path: '/hotnews',
         name: 'hotnews',
         component: HotNews,
+    },
+    {
+        path: '/forumitem',
+        name: 'forumitem',
+        component: ForumItem,
+    },
+    {
+        path: '/postitem',
+        name: 'postitem',
+        component: PostItem,
     },
 ]
 const router = createRouter({
