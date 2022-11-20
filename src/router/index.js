@@ -13,7 +13,7 @@ import PostItem from '../components/PostItem.vue'
 
 const routes = [
     {
-        path: '/Main',
+        path: '/',
         name: 'Main',
         component: Main,
     },

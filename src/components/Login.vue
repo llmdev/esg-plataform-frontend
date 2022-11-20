@@ -26,7 +26,7 @@
           this.createLocalStorage(data)
 
           setTimeout(() => {
-            this.$router.push('/Main')
+            this.$router.push('/')
           }, 2000);
         })
         .catch((data) => {

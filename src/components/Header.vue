@@ -39,14 +39,14 @@ const count = ref(0)
   <section class="header">
     <header>
         <div class="logo">
-            <a href="/Main">
+            <a href="/">
                 <img src="../assets/logo.svg  " alt="Colheita do Bem">
             </a>
         </div>
         <nav class="header__menu__wrapper">
             <ul class="header__menu">
                 <li class="header__menu__item">
-                    <router-link to="/Main"> Página Inicial</router-link>
+                    <router-link to="/"> Página Inicial</router-link>
                 </li>
                 <li class="header__menu__item">
                     <router-link to="/about"> Notícias</router-link>
