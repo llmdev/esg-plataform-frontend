@@ -76,7 +76,7 @@
                                     <h2>Melhores formas de começar sua horta caseira</h2>
                                 </div>
                             </div>
-                            <div class="meu_ard__botao">
+                            <div class="meu_card__botao">
                                 <img src="../assets/arrow-button.svg" alt="">
                             </div>
                         </div>
@@ -203,18 +203,22 @@
     padding: 2em;
     background-color:  #E5EAF2;
     margin-right: 3em;
-    width: 86%;
+    width: 100%;
     border-radius: 12px;
+    align-items: flex-start;
 }
 .meu_eventos{
    gap: 0;
    margin: 0;
+   width: fit-content;
+}
+.meu_eventos h1{
+    margin: 0.5em;
 }
 
 .meu_eventos__cards {
     display: flex;
     justify-content: space-evenly;
-    gap: 1em;
     margin: 1em;
     flex-direction: column;
 }
@@ -227,8 +231,8 @@
     padding: 1em;
     border-radius: 12px;
     height: fit-content;
-    gap: 0;
-
+    gap: 11em;
+    width: 100%;
 }
 
 .meu_card__botao {
@@ -291,6 +295,7 @@
     }
     .profile__topics__wrapper{
         margin: 0;
+        display: flex;
     }
     .meu_eventos__wrapper{
         margin: 0;

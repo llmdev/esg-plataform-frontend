@@ -1,4 +1,6 @@
-<script>
+<script setup>
+import Subscription from './Subscription.vue'
+import Forum from './Forum.vue'
 </script>
 
 <template>
@@ -52,6 +54,11 @@
             </ul>
         </div>
       </section>
+
+
+      <Forum />
+      <Subscription />
+
 </template>
 
 <style>
@@ -76,5 +83,10 @@
 
 .noticias__thumb.hotnews ul li{
     width: fit-content;
+}
+.noticias__thumb.hotnews{
+    width: fit-content;
+    border-radius: 12px;
+    padding: 2em;
 }
 </style>
