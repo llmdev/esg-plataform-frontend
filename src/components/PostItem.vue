@@ -85,13 +85,13 @@ export default {
 .make-comment{
     display: flex;
     flex-direction: column;
-    background-color: black;
-
+    
 }
 textarea{
     width: 100%
 }
 .make-comment button{
+    background-color: black;
     text-align: end;
     color: white;
     margin-top: 20px;
