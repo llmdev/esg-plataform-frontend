@@ -56,7 +56,7 @@ export default {
         </p>
         <div class="comment__email__wrapper">
           <label for="email" class="comment__email__label">Selecione a categoria</label>
-          <select name="categorias" id="" v-model="selectedCategory">
+          <select class="select__categorias" name="categorias" id="" v-model="selectedCategory">
             <option v-for="category in categories" :key="category.id" :value="category.id">{{ category.title }}</option>
           </select>
         </div>
@@ -200,6 +200,10 @@ export default {
 
 .cadastrar p a {
   color: #70C174;
+}
+.select__categorias{
+  padding: 0.5em;
+  border-radius: 5px;
 }
 
 @media (max-width: 576px) {

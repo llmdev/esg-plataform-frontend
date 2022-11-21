@@ -117,7 +117,7 @@ export default {
     display: flex;
     align-items: start;
     gap: 2em;
-    margin: 0 2em;
+    margin: 0 2em 2em;
 }
 .profile__card__wrapper{
     background-color: #000;
@@ -182,7 +182,6 @@ export default {
     display: flex;
     flex-direction: column;
     padding: 3em;
-    margin-right: 3em;
     border-radius: 12px;
 }
 .profile__learn h1{
@@ -212,8 +211,8 @@ export default {
 }
 .item__wrapper{
     display: flex;
-    width: 310px;
-    height: 210px;
+    max-width: 310px;
+    max-height: 210px;
     align-items: flex-end;
 }
 .item__wrapper p{
@@ -227,10 +226,11 @@ export default {
 }
 /* meu_EVENTOS/TOPICOS */
 .meu_eventos__wrapper {
+    display: flex;
+    flex-direction: column;
     padding: 2em;
     background-color:  #E5EAF2;
-    margin-right: 3em;
-    width: 100%;
+    width: fit-content;
     border-radius: 12px;
     align-items: flex-start;
 }
@@ -259,7 +259,7 @@ export default {
     border-radius: 12px;
     height: fit-content;
     gap: 11em;
-    width: 100%;
+    width: fit-content;
 }
 
 .meu_card__botao {
@@ -289,6 +289,11 @@ export default {
 .meu_card__evento h2 {
     font-size: 16px;
 }
+.categorias{
+    overflow-x: auto;
+    overflow-y: hidden;
+    height: 66px;
+}
 @media (max-width:991px){
     
 .sobre-nos__wrapper{
@@ -309,9 +314,7 @@ export default {
     .item__wrapper{
         height: 145px;
     }
-    .categorias{
-        overflow: auto;
-    }
+
 }
 @media (max-width:767px){
     .profile__wrapper{

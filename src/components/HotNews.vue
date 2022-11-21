@@ -4,7 +4,7 @@ import Forum from './Forum.vue'
 </script>
 
 <template>
-    <section class="sobre-nos__wrapper">
+    <section class="sobre-nos__wrapper herous">
         <div class="sobre-nos">
             <div class="respiro">
                 <hr width="72px">
@@ -88,5 +88,10 @@ import Forum from './Forum.vue'
     width: fit-content;
     border-radius: 12px;
     padding: 2em;
+}
+@media (max-width: 1200px) {
+    .herous{
+    flex-direction: column;
+    }
 }
 </style>

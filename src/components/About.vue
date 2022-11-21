@@ -30,6 +30,7 @@ import Team from './Team.vue'
 .video {
     display: flex;
     justify-content: center;
+    margin: 2em 0;
 }
 .video iframe {
     width: 80%;

@@ -92,6 +92,7 @@ ul, li {
 @media (max-width: 767px) {
     .planos h1 {
         width: fit-content;
+        padding: 0 1em;
     }
 }
 
