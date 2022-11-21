@@ -85,6 +85,7 @@ export default {
 .make-comment{
     display: flex;
     flex-direction: column;
+    background-color: black;
 
 }
 textarea{
