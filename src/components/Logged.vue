@@ -309,6 +309,9 @@ export default {
     .item__wrapper{
         height: 145px;
     }
+    .categorias{
+        overflow: auto;
+    }
 }
 @media (max-width:767px){
     .profile__wrapper{
