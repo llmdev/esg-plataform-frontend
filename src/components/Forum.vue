@@ -128,6 +128,7 @@ export default {
 
 .meu_evento__cards__item.topic {
     background-color: #f9f9f9;
+    width: 100%;
 }
 
 .meu_card__data__dia.topic {
