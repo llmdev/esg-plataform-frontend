@@ -72,6 +72,9 @@ import Forum from './Forum.vue'
     width: 300px;
     padding: 0.5em;
 }
+.hotnews{
+    margin-bottom: 2em;
+}
 
 .noticias__thumb.hotnews ul li a{
     display: flex;
