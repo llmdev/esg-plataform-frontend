@@ -50,7 +50,7 @@ export default {
           <div class="respiro__comment">
             <hr width="72px">
           </div>
-          <h3>Faça um post</h3>
+          <h3>Crie um Tópico</h3>
         </a>
         <p>Está na hora de fazer parte de grandes discussões, aprender novas formas de cuidar e fortalecer a sua horta.
         </p>
