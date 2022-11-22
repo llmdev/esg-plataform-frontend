@@ -74,8 +74,8 @@ const iconsvg = `<svg viewBox="0 0 100 80" width="40" height="40">   <rect width
                 <span class="material-symbols-outlined">
                     menu
                     </span>
-                <!-- <i class="menuIcon material-icons">
-                </i> -->
+                <i class="menuIcon material-icons">
+                </i>
             </button>
             <button v-if="navOpen" v-on:click="navOpen=!navOpen">
                 <span>
