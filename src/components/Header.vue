@@ -48,22 +48,19 @@ const iconsvg = `<svg viewBox="0 0 100 80" width="40" height="40">   <rect width
         </div>
         <nav class="header__menu__wrapper" >
             <ul class="header__menu" :v-show="navOpen" :class="{active:navOpen}" >
-                <li class="header__menu__item">
+                <li class="header__menu__item" v-on:click="navOpen=!navOpen">
                     <router-link to="/"> Página Inicial</router-link>
                 </li>
-                <li class="header__menu__item">
+                <li class="header__menu__item" v-on:click="navOpen=!navOpen">
                     <router-link to="/about"> Notícias</router-link>
                 </li>
-                <!-- <li class="header__menu__item">
-                    <router-link to="/about"> Conteúdo</router-link>
-                </li> -->
-                <li class="header__menu__item">
+                <li class="header__menu__item" v-on:click="navOpen=!navOpen">
                         <router-link to="/hotnews">Fórum</router-link>
                 </li>
-                <li v-if="isLogged" class="header__menu__item">
+                <li v-if="isLogged" class="header__menu__item" v-on:click="navOpen=!navOpen">
                     <router-link to="/logged" > Meu Perfil</router-link>
                 </li>
-                <li class="header__menu__item log-in">
+                <li class="header__menu__item log-in" v-on:click="navOpen=!navOpen">
                     <button class="logout-button" v-if="isLogged" @click="logout"> Sair</button>
                     <router-link to="/Login" v-if="!isLogged" > Login</router-link>
                 </li>
