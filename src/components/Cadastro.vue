@@ -32,6 +32,8 @@ export default {
         this.nickname = ''
         this.email = ''
         this.password = ''
+        const router = this.$router
+        router.push('/login')      
       })
       .catch( err => {
         this.loading = false
@@ -188,8 +190,7 @@ gap: 16px;
   color: green;
   font-size: 12px;
 }
-
-@media (max-width:576px){
+@media (max-width:767px){
   .login{
     background-image:  linear-gradient(rgba(0, 0, 0, 0.5),
     rgba(0, 0, 0, 0.5)), url('../assets/fotos_cadastro.png');
@@ -201,6 +202,8 @@ gap: 16px;
   .cadastro__imagem{
     display: none;
   }
+}
+@media (max-width:576px){
   .login__textos a h3, .respiro hr{
     color: #FFF;
   }

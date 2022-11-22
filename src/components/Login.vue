@@ -173,7 +173,7 @@
 .cadastrar p a{
   color: #70C174;
 }
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .login__imagem{
     display: none;
   }
