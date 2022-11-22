@@ -202,8 +202,6 @@ gap: 16px;
   .cadastro__imagem{
     display: none;
   }
-}
-@media (max-width:576px){
   .login__textos a h3, .respiro hr{
     color: #FFF;
   }
