@@ -32,8 +32,9 @@ export default {
         this.nickname = ''
         this.email = ''
         this.password = ''
+        alert('CADASTRO FEITO COM SUCESSO')
         const router = this.$router
-        router.push('/login')      
+        router.push('/cadastro')      
       })
       .catch( err => {
         this.loading = false
@@ -44,9 +45,9 @@ export default {
 }
 </script>
 <template>
-  <section class="login__wrapper">
-    <div class="login">
-        <div class="login__textos">
+  <section class="cadastro__wrapper">
+    <div class="cadastro">
+        <div class="cadastro__textos">
             <a href=".#">
                 <div class="respiro">
                     <hr width="72px">
@@ -54,24 +55,24 @@ export default {
                 <h3>Criar conta</h3>
             </a>
             <p>Está na hora de fazer parte de grandes discussões, aprender novas formas de cuidar e fortalecer a sua horta.</p>
-            <div class="login__usuario__wrapper">
-                <label for="usuario" class="login__usuario__label">Usuário</label>
-                <input id="usuario" :disabled="loading" v-model="nickname"  type="text" class="login__usuario__input" placeholder="@seuusario">
+            <div class="cadastro__usuario__wrapper">
+                <label for="usuario" class="cadastro__usuario__label">Usuário</label>
+                <input id="usuario" :disabled="loading" v-model="nickname"  type="text" class="cadastro__usuario__input" placeholder="@seuusario">
             </div>
-            <div class="login__usuario__wrapper">
-                <label for="usuario" class="login__usuario__label">Nome completo</label>
-                <input id="usuario" :disabled="loading" v-model="name"  type="text" class="login__usuario__input" placeholder="Nome Completo">
+            <div class="cadastro__usuario__wrapper">
+                <label for="usuario" class="cadastro__usuario__label">Nome completo</label>
+                <input id="usuario" :disabled="loading" v-model="name"  type="text" class="cadastro__usuario__input" placeholder="Nome Completo">
             </div>
-            <div class="login__email__wrapper">
-                <label for="email" class="login__email__label">E-mail</label>
-                <input id="email" :disabled="loading" v-model="email" type="text" class="login__email__input" placeholder="email@dominio.com.br">
+            <div class="cadastro__email__wrapper">
+                <label for="email" class="cadastro__email__label">E-mail</label>
+                <input id="email" :disabled="loading" v-model="email" type="text" class="cadastro__email__input" placeholder="email@dominio.com.br">
             </div>
-            <div class="login__senha__wrapper">
-                <label for="senha" class="login__senha__label">Senha</label>
-                <input id="senha" :disabled="loading" v-model="password" type="password" class="login__senha__input" placeholder="Insira sua senha">
+            <div class="cadastro__senha__wrapper">
+                <label for="senha" class="cadastro__senha__label">Senha</label>
+                <input id="senha" :disabled="loading" v-model="password" type="password" class="cadastro__senha__input" placeholder="Insira sua senha">
             </div>
-            <p class="login__error-message" v-if="err">{{err}}</p>
-            <p class="login__success-message" v-if="success">{{success}}</p>
+            <p class="cadastro__error-message" v-if="err">{{err}}</p>
+            <p class="cadastro__success-message" v-if="success">{{success}}</p>
             <router-link to="/logged">
               <button class="entrar" @click="cadastrar" v-if="!loading" >Cadastrar</button>
             </router-link>
@@ -82,7 +83,7 @@ export default {
         </div>
         <div class="cadastrar">
             <p>Já tem conta? 
-              <router-link to="/login"> Fazer Log In.</router-link>
+              <router-link to="/cadastro"> Fazer Log In.</router-link>
             </p>
         </div>
 
@@ -95,15 +96,15 @@ export default {
 * {
   font-size: 16px;
 }
-.login__textos a,.login__textos a h3, .login__textos p, .cadastrar p, .cadastrar p a {
+.cadastro__textos a,.cadastro__textos a h3, .cadastro__textos p, .cadastrar p, .cadastrar p a {
   font-family: 'Roboto', sans-serif;
 }
 
-.login__wrapper {
+.cadastro__wrapper {
   display: flex;
 }
 
-.login {
+.cadastro {
   padding: 6em 4em;
   display: flex;
   flex-direction: column;
@@ -113,18 +114,18 @@ export default {
   background-color:#EFF7F2;
 }
 
-.login__textos{
+.cadastro__textos{
 gap: 16px;
 }
 
-.login__textos a {
+.cadastro__textos a {
   display: flex;
   text-decoration: none;
   color: #000;
   gap: 16px;
 
 }
-.login__textos a h3 {
+.cadastro__textos a h3 {
   display: flex;
   text-decoration: none;
   color: #000;
@@ -140,22 +141,22 @@ gap: 16px;
   background-repeat: no-repeat;
 }
 /* FLEX COLUMN */
-.login__email__wrapper, .login__senha__wrapper, .login__usuario__wrapper, .login__textos {
+.cadastro__email__wrapper, .cadastro__senha__wrapper, .cadastro__usuario__wrapper, .cadastro__textos {
   display: flex;
   flex-direction: column;
 }
-.login__email__label, .login__senha__label, .login__usuario__label {
+.cadastro__email__label, .cadastro__senha__label, .cadastro__usuario__label {
   font-weight: 700;
   margin-bottom: 4px;
 }
-.login__email__input, .login__senha__input, .login__usuario__input {
+.cadastro__email__input, .cadastro__senha__input, .cadastro__usuario__input {
   padding: 1em;
   border: none;
   border-radius: 4px;
   font-family: 'Roboto', sans-serif;
 }
 
-.login__textos button{
+.cadastro__textos button{
   display: flex;
   width: 100%;
   justify-content: center;
@@ -181,17 +182,17 @@ gap: 16px;
   color: #70C174;
 }
 
-.login__error-message {
+.cadastro__error-message {
   color: red;
   font-size: 12px;
 }
 
-.login__success-message {
+.cadastro__success-message {
   color: green;
   font-size: 12px;
 }
 @media (max-width:767px){
-  .login{
+  .cadastro{
     background-image:  linear-gradient(rgba(0, 0, 0, 0.5),
     rgba(0, 0, 0, 0.5)), url('../assets/fotos_cadastro.png');
     background-repeat: no-repeat;
@@ -202,7 +203,7 @@ gap: 16px;
   .cadastro__imagem{
     display: none;
   }
-  .login__textos a h3, .respiro hr{
+  .cadastro__textos a h3, .respiro hr{
     color: #FFF;
   }
   .esqueci{
