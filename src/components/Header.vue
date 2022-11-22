@@ -4,7 +4,8 @@ import { ref } from 'vue'
 export default {
     data() {
         return {
-            isLogged: false
+            isLogged: false,
+            navOpen: false
         }
     },
     watch:{
@@ -27,9 +28,11 @@ export default {
             localStorage.removeItem('user');
         }
     }
+    
 }
 
 const count = ref(0)
+const iconsvg = `<svg viewBox="0 0 100 80" width="40" height="40">   <rect width="100" height="20"></rect>   <rect y="30" width="100" height="20"></rect>   <rect y="60" width="100" height="20"></rect> </svg>`
 
 
 </script>
@@ -43,8 +46,8 @@ const count = ref(0)
                 <img src="../assets/logo.svg  " alt="Colheita do Bem">
             </a>
         </div>
-        <nav class="header__menu__wrapper">
-            <ul class="header__menu">
+        <nav class="header__menu__wrapper" >
+            <ul class="header__menu" :v-show="navOpen" :class="{active:navOpen}" >
                 <li class="header__menu__item">
                     <router-link to="/"> Página Inicial</router-link>
                 </li>
@@ -67,9 +70,17 @@ const count = ref(0)
             </ul>
         </nav>
         <nav class="hamburguer">
-            <button :on-click="toggleMenu"  >
-                <i class="menuIcon material-icons">menu</i>
-                <i class="closeIcon material-icons">close</i>
+            <button v-if="!navOpen" v-on:click="navOpen=!navOpen" >
+                <span class="material-symbols-outlined">
+                    menu
+                    </span>
+                <!-- <i class="menuIcon material-icons">
+                </i> -->
+            </button>
+            <button v-if="navOpen" v-on:click="navOpen=!navOpen">
+                <span>
+                    {{navOpen?'X':'ta dando certo'}}
+                </span>
             </button>
         </nav>
     </header>
@@ -78,11 +89,22 @@ const count = ref(0)
 
 <style scoped>
 
-.hamburguer,
-.parallax_sobre-nos {
+.hamburguer{
     display: none;
 }
-
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+.hamburguer span:last-child{
+    font-family: 'Roboto';
+    color: #FFF;
+    font-size: 25px;
+    text-shadow: 1px 1px 2px #fff;
+}
 header {
     display: flex;
     width: 90%;
@@ -94,6 +116,7 @@ header {
 
 .logout-button {
     color: white;
+    background-color: #000;
 }
 .header {
     display: flex;
@@ -117,7 +140,7 @@ header {
 
 .header__menu__item.log-in a {
     display: flex;
-    background-color: black;
+    background-color: #000;
     color: #FFF;
     margin: 5px;
     border-radius: 5px;
@@ -171,7 +194,7 @@ header {
         display: none;
         color: #FFF;
     }
-    .showMenu {
+    .active {
         transform: translateY(0);
         display: flex;
         flex-direction: column;

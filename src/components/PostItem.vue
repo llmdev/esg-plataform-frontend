@@ -101,7 +101,7 @@ textarea{
 }
 
 .make-comment button:disabled{
-    opacity: 0.2;
+    opacity: 0.9;
 }
 
 .nickname{
