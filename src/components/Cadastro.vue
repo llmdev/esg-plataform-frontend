@@ -198,6 +198,9 @@ gap: 16px;
     color: #FFF;
     width: 100%;
   }
+  .cadastro__imagem{
+    display: none;
+  }
   .login__textos a h3, .respiro hr{
     color: #FFF;
   }
