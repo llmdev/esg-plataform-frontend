@@ -9,7 +9,9 @@
                     Entrar Gratuitamente
                 </button>
                 <button>
-                    Planos disponíveis
+                    <router-link to="/selling">
+                        Planos disponíveis
+                    </router-link>
                 </button>
             </div>
         </div>

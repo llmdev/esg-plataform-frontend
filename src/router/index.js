@@ -8,6 +8,7 @@ import Posts from '../components/Posts.vue'
 import HotNews from '../components/HotNews.vue'
 import ForumItem from '../components/ForumItem.vue'
 import PostItem from '../components/PostItem.vue'
+import Selling from '../components/Selling.vue'
 
 
 
@@ -56,6 +57,11 @@ const routes = [
         path: '/postitem',
         name: 'postitem',
         component: PostItem,
+    },
+    {
+        path: '/selling',
+        name: 'selling',
+        component: Selling,
     },
 ]
 const router = createRouter({
