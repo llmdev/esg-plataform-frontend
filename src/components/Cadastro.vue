@@ -11,7 +11,8 @@ export default {
       password: '',
       loading: false,
       err: '',
-      success: ''
+      success: '',
+      successMSG: false
     }
   },
   methods: {
@@ -26,15 +27,17 @@ export default {
         password: this.password
       })
       .then(({data}) => {
+        const router = this.$router
         this.loading = false
         this.success = data.message
         this.name = ''
         this.nickname = ''
         this.email = ''
         this.password = ''
-        alert('CADASTRO FEITO COM SUCESSO')
-        const router = this.$router
-        router.push('/cadastro')      
+        this.successMSG = true
+        setTimeout(()=>{
+          router.push('/login')
+        }, 2000);
       })
       .catch( err => {
         this.loading = false
@@ -54,6 +57,7 @@ export default {
                 </div>
                 <h3>Criar conta</h3>
             </a>
+            <p v-if="successMSG" class="success-msg">CADASTRO REALIZADO COM SUCESSO!</p>
             <p>Está na hora de fazer parte de grandes discussões, aprender novas formas de cuidar e fortalecer a sua horta.</p>
             <div class="cadastro__usuario__wrapper">
                 <label for="usuario" class="cadastro__usuario__label">Usuário</label>
@@ -83,7 +87,7 @@ export default {
         </div>
         <div class="cadastrar">
             <p>Já tem conta? 
-              <router-link to="/cadastro"> Fazer Log In.</router-link>
+              <router-link to="/login"> Fazer Log In.</router-link>
             </p>
         </div>
 
@@ -98,6 +102,13 @@ export default {
 }
 .cadastro__textos a,.cadastro__textos a h3, .cadastro__textos p, .cadastrar p, .cadastrar p a {
   font-family: 'Roboto', sans-serif;
+}
+.success-msg{
+  background-color: #70C174;
+  color:#FFF;
+  font-size: 24px;
+  border-radius: 5px;
+  padding: 2em;
 }
 
 .cadastro__wrapper {
