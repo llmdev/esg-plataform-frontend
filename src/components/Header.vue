@@ -188,8 +188,11 @@ header {
     .hamburguer button {
         border: none;
         background: none;
+        padding: 0;
     }
-
+    .hamburguer button span:first-child{
+        font-size: 45px;
+    }
     .closeIcon {
         display: none;
         color: #FFF;
