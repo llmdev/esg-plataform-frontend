@@ -11,11 +11,11 @@ console.log('oi')
             <img src="../assets/frame-13.png" alt="Avatar" style="width:100%;">
             <div class="container" style="background-color:white">
               <h2><b>20% OFF YOUR PURCHASE</b></h2>
-              <p>Lorem ipsum..</p>
+              <p>Para você iniciante que quer as melhores dicas pra seu plantio</p>
             </div>
             <div class="container">
               <p>Use Promo Code: <span class="promo">BOH232</span></p>
-              <p class="expire">Expires: Jan 03, 2021</p>
+              <p class="expire">Expira em: 4 de abril de 2023</p>
             </div>
           </div>
         <div class="coupon">
@@ -25,11 +25,11 @@ console.log('oi')
             <img src="../assets/frame-13.png" alt="Avatar" style="width:100%;">
             <div class="container" style="background-color:white">
               <h2><b>20% OFF YOUR PURCHASE</b></h2>
-              <p>Lorem ipsum..</p>
+              <p>Diversidade grande de plantas e o cuidado especial de cada uma.</p>
             </div>
             <div class="container">
               <p>Use Promo Code: <span class="promo">BOH232</span></p>
-              <p class="expire">Expires: Jan 03, 2021</p>
+              <p class="expire">Expira em: 4 de abril de 2023</p>
             </div>
           </div>
         <div class="coupon">
@@ -39,11 +39,11 @@ console.log('oi')
             <img src="../assets/frame-13.png" alt="Avatar" style="width:100%;">
             <div class="container" style="background-color:white">
               <h2><b>20% OFF YOUR PURCHASE</b></h2>
-              <p>Lorem ipsum..</p>
+              <p>Só come o que planta, ou frutos de escâmbo? Você os mais deliciosos legumes .</p>
             </div>
             <div class="container">
               <p>Use Promo Code: <span class="promo">BOH232</span></p>
-              <p class="expire">Expires: Jan 03, 2021</p>
+              <p class="expire">Expira em: 4 de abril de 2023</p>
             </div>
           </div>
     </div>
