@@ -158,6 +158,9 @@ header {
     .header__menu__wrapper{
         display: block;
     }
+    .logout-button{
+        font-size: 24px;
+    }
     .header__menu__item {
         font-size: 12px;
     }
