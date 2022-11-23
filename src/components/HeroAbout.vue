@@ -44,7 +44,7 @@
     margin-bottom: 1em;
 }
 .sobre-nos {
-    width: 100%;
+    width: fit-content;
 }
 .sobre-nos__textos{
     margin-right: 2em;
