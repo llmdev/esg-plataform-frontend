@@ -116,6 +116,7 @@ const count = ref(0)
         padding: 2em 0;
         flex-direction: column;
         align-items: baseline;
+        align-items: flex-start;
     }
 
     .respiro hr {
@@ -123,7 +124,7 @@ const count = ref(0)
     }
 
     .sobre-nos {
-        width: 90%;
+        width: fit-content;
         margin: 0;
     }
 
