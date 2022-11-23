@@ -1,5 +1,17 @@
 <script>
-console.log('oi')
+export default {
+    data() {
+        return {
+            isLogged: false,
+        }
+    },
+    mounted() {
+        const user = JSON.parse(localStorage.getItem('user'));
+        if(user) {
+            this.isLogged = true
+        }
+    }
+  }
 </script>
 
 <template>
@@ -15,7 +27,8 @@ console.log('oi')
               <div class="container2">
                 <p class="expire">Expira em: 4 de abril de 2023</p>
                 <button class="comprar">
-                  <router-link to="/payment">Quero já</router-link>
+                  <router-link to="/payment" v-if="isLogged">Quero já</router-link>
+                  <router-link to="/cadastro" v-else>Cadastrar e comprar!</router-link>
                 </button>
               </div>
             </div>
@@ -30,7 +43,10 @@ console.log('oi')
               </div>
               <div class="container2">
                 <p class="expire">Expira em: 4 de abril de 2023</p>
-                <button class="comprar"><router-link to="/payment">Quero já</router-link></button>
+                <button class="comprar">
+                  <router-link to="/payment" v-if="isLogged">Quero já</router-link>
+                  <router-link to="/cadastro" v-else>Cadastrar e comprar!</router-link>
+                </button>
               </div>
             </div>
           </div>
@@ -45,7 +61,8 @@ console.log('oi')
               <div class="container2">
                 <p class="expire">Expira em: 4 de abril de 2023</p>
                 <button class="comprar">
-                  <router-link to="/payment">Quero já</router-link>
+                  <router-link to="/payment" v-if="isLogged">Quero já</router-link>
+                  <router-link to="/cadastro" v-else>Cadastrar e comprar!</router-link>
                 </button>
               </div>
             </div>
@@ -84,7 +101,7 @@ console.log('oi')
     background: #70C174;
     border: none;
     color: #fff;
-    width: 149px;
+    width: fit-content;
     height: 51px;
     font-size: 16px;
     border-radius: 4px;
@@ -98,4 +115,11 @@ console.log('oi')
     font-size: 24px;
     margin: 0 0 1em 0;
   }
+
+@media (max-width: 767px){
+  .coupon__wrapper {
+    flex-direction: column;
+    padding: 0;
+  }
+}
 </style>

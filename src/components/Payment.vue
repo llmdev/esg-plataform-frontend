@@ -3,6 +3,9 @@
 
 <template>
     <div class="payment__wrapper">
+        <div class="paymente__text__wrapper">
+            <h1>Dados para faturamento</h1>
+        </div>
         <label for="">Nome que está no cartão</label>
         <input  id="" type="text" placeholder="Cris de Oliveira Xavier">
         <label for="">Número do cartão</label>
@@ -25,6 +28,7 @@
     margin: 0 auto;
     padding: 2em;
     letter-spacing: 2px;
+    gap: 1em;
 }
 .payment__wrapper label{
     font-weight: 700;
