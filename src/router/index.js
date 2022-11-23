@@ -9,6 +9,7 @@ import HotNews from '../components/HotNews.vue'
 import ForumItem from '../components/ForumItem.vue'
 import PostItem from '../components/PostItem.vue'
 import Selling from '../components/Selling.vue'
+import Payment from '../components/Payment.vue'
 
 
 
@@ -62,6 +63,11 @@ const routes = [
         path: '/selling',
         name: 'selling',
         component: Selling,
+    },
+    {
+        path: '/payment',
+        name: 'payment',
+        component: Payment,
     },
 ]
 const router = createRouter({
